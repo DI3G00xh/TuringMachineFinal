@@ -13,25 +13,24 @@ El objetivo principal es demostrar la ejecución de algoritmos a nivel fundament
 
 El repositorio del proyecto se organiza de la siguiente manera:
 
-- /controllers: Contiene la lógica de programación del robot.
+- /Scripts: Contiene la lógica de programación del robot
 
-    - machine_controller.py: Script principal en Python. Implementa la lectura de sensores, control de motores paso a paso/servos y, lo más importante, los diccionarios que definen las Tablas de Transición (Suma y Resta).
+    - ControllerWebot.py: Script principal en Python. Implementa la lectura de sensores, control de motores paso a paso/servos y, los diccionarios que definen las Tablas de Transición (Suma y Resta)
+    - RaspberryScript.py: Misma logica implementada a raspberry en python
 
-- /worlds: Archivos de entorno para el simulador Webots.
+- /Proyecto: Archivos de entorno para el simulador Webots
 
-    - turing_world.wbt: Escenario de simulación con la configuración de iluminación, suelo mate y propiedades físicas ajustadas.
+    - TuringMachineWebots.rar: Mundo y Proyecto importable a webots
 
-- /design: Archivos CAD y esquemas.
+- /Diseño: Esquemas
 
-    - chasis_robot.obj/step: Modelo 3D del robot diseñado en Fusion 360.
+    - PlanosTuringMachine.pdf: Planos de diseño del robot
 
-    - circuit_diagram.pdf: Esquema de conexiones (Raspberry Pi/Arduino, Drivers A4988, Servos).
+- /Docs: Documentación teórica
 
-- /docs: Documentación teórica.
+   - LogicaTuringMachine: Definicion visual del automata de turing
 
-   - TallerMT_DiegoAdaos.pdf: Análisis teórico, definición formal del alfabeto y diagramas de estados.
-
-   - Diario_Proyecto.md: Registro cronológico de avances y decisiones técnicas.
+   - DiarioProyecto.md: Registro cronológico de avances y decisiones técnicas
 
 ### 3. Explicación Lógica
 
@@ -47,7 +46,7 @@ La máquina opera sobre un sistema Determinista basado en una codificación unar
 
 
 - 3.2 Funcionamiento del Autómata
-  - El núcleo del software es una Máquina de Estados Finitos (FSM). El ciclo de operación es:
+  - El núcleo del software es una Máquina de Estados Finitos. El ciclo de operación es:
 
   - Lectura: La cámara captura el color del suelo. Se procesa mediante umbrales RGB para seleccionar el valor en 1, 0 o B.
 
